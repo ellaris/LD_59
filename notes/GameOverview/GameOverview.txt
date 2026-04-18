@@ -19,3 +19,23 @@ manage a shipwrecked guy on an island, collect resources, survive, keep the sing
 puzzle game, send signals between nodes, avoid dangerous/"hacker" nodes, get upgrades
 
 The blacksmith apprentice idea.
+
+
+
+
+The blacksmith apprentice
+title: follow my lead, wait for my signal
+
+you click to strike the iron while it's hot, you have to strike it at the best time 
+	(every 2 seconds, 0.5 sec grace, 1 sec after the other blacksmith)
+there is a blacksmith working who you can use as reference
+You are being instructed by your "master"
+	at first he instructs you what to do
+	then he comes in drunk and is off
+	he doesn't show up
+	he shows up and tries to sabotage you
+	[multiple blacksmits working]
+	
+You get a score after every item (15 clicks)
+[choose what item you are working on]
+[choose a blackmith sprite]
