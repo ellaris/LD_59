@@ -8,3 +8,14 @@ something about wuxia murim
 
 management game - you are given control over medieval village and have to manage it, tell people what to do, feed them, improve the village and pay taxes, taxes increase and some people can be unhappy lowering performance
 
+Theme: Signal
+
+title: Wait for signal
+
+green, yellow, red light, make the vechicle cross the road safetly, puddles (yellow), traffic (red), collision from behind (green), unexpected dash (yellow)
+
+manage a shipwrecked guy on an island, collect resources, survive, keep the singal fire going.
+
+puzzle game, send signals between nodes, avoid dangerous/"hacker" nodes, get upgrades
+
+The blacksmith apprentice idea.
