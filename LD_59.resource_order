@@ -16,5 +16,9 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"snd_speech_now","order":1,"path":"sounds/snd_speech_now/snd_speech_now.yy",},
+    {"name":"obj_anvil","order":1,"path":"objects/obj_anvil/obj_anvil.yy",},
+    {"name":"snd_speech_drunk_now","order":2,"path":"sounds/snd_speech_drunk_now/snd_speech_drunk_now.yy",},
+  ],
 }

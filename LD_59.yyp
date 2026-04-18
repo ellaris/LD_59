@@ -34,7 +34,13 @@
     "IDEVersion": "2023.11.0.121",
   },
   "resources": [
+    {"id":{"name":"snd_speech_now","path":"sounds/snd_speech_now/snd_speech_now.yy",},},
+    {"id":{"name":"spr_anvil","path":"sprites/spr_anvil/spr_anvil.yy",},},
+    {"id":{"name":"obj_anvil","path":"objects/obj_anvil/obj_anvil.yy",},},
+    {"id":{"name":"snd_speech_drunk_now","path":"sounds/snd_speech_drunk_now/snd_speech_drunk_now.yy",},},
+    {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
     {"id":{"name":"GameOverview","path":"notes/GameOverview/GameOverview.yy",},},
+    {"id":{"name":"snd_strike","path":"sounds/snd_strike/snd_strike.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
