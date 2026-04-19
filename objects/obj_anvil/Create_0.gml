@@ -29,6 +29,8 @@ play_sound = function(_sound){
 }
 
 create_sparks = function(){
+	var _light = instance_create_layer(x,y-8,layer,obj_light);
+	_light.init(80,obj_control.game_speed*0.5);
 	var _num = 3;
 	if(anvil_mode == "player")
 		_num = 1+(obj_control.last_strike<obj_control.grace) + (obj_control.last_strike<obj_control.grace/2)

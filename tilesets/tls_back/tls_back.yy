@@ -9,8 +9,8 @@
     "TileSerialiseData": [],
   },
   "out_columns": 3,
-  "out_tilehborder": 0,
-  "out_tilevborder": 0,
+  "out_tilehborder": 1,
+  "out_tilevborder": 1,
   "parent": {
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
@@ -19,7 +19,7 @@
     "name": "spr_tiles",
     "path": "sprites/spr_tiles/spr_tiles.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",

@@ -1,6 +1,39 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
+// lighing handling
+if( not surface_exists(surface_lighting))
+	surface_lighting = surface_create(room_width,room_height);
+	
+surface_set_target(surface_lighting);
+draw_clear_alpha(c_black,0.5);
+gpu_set_blendmode(bm_subtract);
+
+draw_set_alpha(0.5);
+draw_sprite(spr_vignette,0,0,0);
+
+with obj_light
+{
+	var _r = range * (0.9+0.1*sin(life/obj_control.game_speed))
+	var _b = 1-floor(sin(life/obj_control.interval))/2;
+	if(max_life > 0)
+		_b = _b * life/max_life;
+	draw_set_alpha(0.5*_b);
+	draw_circle(x,y,_r,false);
+	draw_set_alpha(0.5*_b);
+	draw_circle(x,y,_r*0.9,false);
+	draw_set_alpha(0.5*_b);
+	draw_circle(x,y,_r*0.2,false);
+}
+
+
+
+draw_set_alpha(1);
+gpu_set_blendmode(bm_normal);
+surface_reset_target();
+
+
+draw_surface(surface_lighting,0,0);
 
 if(game_state == "menu")
 {
@@ -77,11 +110,12 @@ else{
 	}
 }
 
+
 // transition
 if(transition and transition_anim > 0)
 {
 	draw_set_color(c_black);
 	draw_rectangle(0,0,room_width,room_height*transition_anim,false);
-	draw_set_color(c_white);
-	draw_line(0,room_height*transition_anim,room_width,room_height*transition_anim);
+	//draw_set_color(c_white);
+	//draw_line(0,room_height*transition_anim,room_width,room_height*transition_anim);
 }

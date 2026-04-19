@@ -1,7 +1,7 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
-var _r = sin((obj_control.life+interval_offset % (interval*2))/(interval*2)*2*pi);
+var _r = abs(sin((obj_control.life+interval_offset % (interval*2))/(interval*2)*2*pi));
 image_index = round(4*_r);
 
 if(anvil_mode != "other" and anvil_mode != "player" and (obj_control.life-obj_control.last_strike_life) div obj_control.interval > 3)

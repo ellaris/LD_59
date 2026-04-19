@@ -19,10 +19,12 @@
   "ResourceOrderSettings": [
     {"name":"snd_speech_now","order":1,"path":"sounds/snd_speech_now/snd_speech_now.yy",},
     {"name":"obj_hammer","order":2,"path":"objects/obj_hammer/obj_hammer.yy",},
+    {"name":"obj_light","order":3,"path":"objects/obj_light/obj_light.yy",},
     {"name":"snd_speech_intro","order":3,"path":"sounds/snd_speech_intro/snd_speech_intro.yy",},
     {"name":"snd_speech_usher","order":7,"path":"sounds/snd_speech_usher/snd_speech_usher.yy",},
     {"name":"snd_wrong_intro","order":5,"path":"sounds/snd_wrong_intro/snd_wrong_intro.yy",},
     {"name":"snd_music","order":6,"path":"sounds/snd_music/snd_music.yy",},
+    {"name":"spr_vignette","order":3,"path":"sprites/spr_vignette/spr_vignette.yy",},
     {"name":"spr_tiles","order":2,"path":"sprites/spr_tiles/spr_tiles.yy",},
     {"name":"snd_drunk_intro","order":4,"path":"sounds/snd_drunk_intro/snd_drunk_intro.yy",},
     {"name":"obj_anvil","order":1,"path":"objects/obj_anvil/obj_anvil.yy",},

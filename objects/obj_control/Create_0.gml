@@ -60,6 +60,27 @@ transition_to = "menu";
 
 end_game_counter = 0;
 
+surface_lighting = noone;
+
+// resize view
+
+var _sw = display_get_width();
+var _sh = display_get_height();
+var _target_height = 180;
+if(_sw/2 > _sh)
+	_target_height = 90;
+var _resize = min(_sw div 320, _sh div _target_height);
+var _nw = 320*_resize;
+var _nh = _target_height*_resize;
+view_set_wport(view_current,_nw);
+view_set_hport(view_current,_nh);
+window_set_size(_nw,_nh);
+
+if(_target_height != 180)
+{
+	view_set_yport(view_current,64);	
+}
+
 pitch_randomize = function(){
 	return 1.0-0.05+0.01*irandom(10)
 }
