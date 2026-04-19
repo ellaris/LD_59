@@ -1,11 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_anvil",
+  "name": "obj_hammer",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -28,20 +27,12 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_index","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":0,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"interval_offset","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":4,},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"anvil_mode","filters":[],"listItems":[
-        "\"other\"",
-        "\"correct\"",
-        "\"drunk\"",
-        "\"wrong\"",
-        "\"player\"",
-      ],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"\"other\"","varType":6,},
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_anvil",
-    "path": "sprites/spr_anvil/spr_anvil.yy",
+    "name": "spr_hammer",
+    "path": "sprites/spr_hammer/spr_hammer.yy",
   },
   "spriteMaskId": null,
   "visible": true,
