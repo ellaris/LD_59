@@ -12,6 +12,7 @@ gpu_set_blendmode(bm_subtract);
 draw_set_alpha(0.5);
 draw_sprite(spr_vignette,0,0,0);
 
+
 with obj_light
 {
 	var _r = range * (0.9+0.1*sin(life/obj_control.game_speed))
@@ -50,6 +51,24 @@ if(game_state == "menu")
 	button("Map 6",192,96,start_map_6, map_scores.map_6, map_availability("map_5"));
 	button("Quit",136,144,quit_game);
 	
+	draw_set_color(c_blue);
+	draw_icon(32,32,0,switch_screen_setting)
+	draw_text(32,32+16,string("{0}", screen_maximize ? "max" : "fit"));
+	//draw_sprite(spr_icon,0,32,32);
+	//if(mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,32-16,32-16,32+16,32+16))
+	//	switch_screen_setting();
+		
+	draw_icon(32,64+16,1,change_music_volume)
+	draw_text(32,64+16+16,string("{0}%",music_volume*100))
+	//draw_sprite(spr_icon,1,32,64);
+	//if(mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,32-16,32-16,32+16,32+16))
+	//	change_music_volume();
+		
+	draw_icon(room_width-32,32,2,change_sound_volume)
+	draw_text(room_width-32,32+16,string("{0}%",sound_volume*100))
+	//draw_sprite(spr_icon,2,room_width-32,32);
+	//if(mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,32-16,32-16,32+16,32+16))
+	//	change_sound_volume();
 }
 else{
 	//var _c = c_white;
@@ -68,6 +87,7 @@ else{
 
 	if(array_length(work) >= tries)
 	{
+		
 		end_game_counter += 1;
 		var _score = 0;
 		for(var i = 0; i < array_length(work); i++)
@@ -89,11 +109,22 @@ else{
 		draw_text(room_width/2,room_height/2-32,string("{0}%",round(_score)));
 		debug_tries = false;
 		
+		if(game_state == "map_6" and not end_sound and _score >= 90)
+		{
+			end_sound = true;
+			audio_play_sound(snd_audio_end,2,false);
+		}
+		
 		if(variable_struct_get(map_scores,game_state) == "" or string_digits(variable_struct_get(map_scores,game_state)) < _score)
 			variable_struct_set(map_scores,game_state,string("{0}%",round(_score)));
 			
 		if(end_game_counter > game_speed*0.25 and end_game_counter < game_speed*4 and mouse_check_button_pressed(mb_left))
 			end_game_counter = game_speed*4;
+	}
+	else
+	{
+		draw_set_color(c_white);
+		draw_text(room_width/2,room_height/2+64,string("{0}/{1}",array_length(work)+1,tries));
 	}
 	
 	draw_set_color(c_white);
@@ -119,3 +150,6 @@ if(transition and transition_anim > 0)
 	//draw_set_color(c_white);
 	//draw_line(0,room_height*transition_anim,room_width,room_height*transition_anim);
 }
+
+//draw_set_color(c_white)
+//draw_text(84,32,string("{0} {1} {2} {3}",display_get_width(),display_get_height(),view_get_wport(view_current),view_get_hport(view_current)));

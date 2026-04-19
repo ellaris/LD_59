@@ -10,6 +10,7 @@ grace = obj_control.grace;
 
 drunk_interval = 0;
 //drunk_available = true;
+obj_control.last_strike_life = obj_control.life;
 
 start = true;
 
@@ -22,18 +23,18 @@ create_hammer = function(_player = false){
 	}
 }
 
-play_sound = function(_sound){
+play_sound = function(_sound,_pitch = 1){
 	var _dist = point_distance(x,y,room_width/2,room_height/2);
 	var _r = max(0.5,_dist/point_distance(0,0,room_width/2,room_height/2));
-	audio_play_sound_at(_sound,room_width/2-x,room_height/2-y,0,100,300,1,false,4,_r*obj_control.gain_randomize(),0,obj_control.pitch_randomize());
+	audio_play_sound_at(_sound,room_width/2-x,room_height/2-y,0,100,300,1,false,4,_r*obj_control.gain_randomize(),0,_pitch*obj_control.pitch_randomize());
 }
 
 create_sparks = function(){
 	var _light = instance_create_layer(x,y-8,layer,obj_light);
-	_light.init(80,obj_control.game_speed*0.5);
+	_light.init(80,obj_control.game_speed*1.0);
 	var _num = 3;
 	if(anvil_mode == "player")
-		_num = 1+(obj_control.last_strike<obj_control.grace) + (obj_control.last_strike<obj_control.grace/2)
+		_num = 1+(obj_control.last_strike<obj_control.grace) + (obj_control.last_strike<obj_control.grace*2)
 	switch(_num)
 	{
 		case 3:

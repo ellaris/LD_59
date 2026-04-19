@@ -1,8 +1,11 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
+if(keyboard_check_pressed(vk_f12))
+	map_scores = { map_1:"90",map_2:"90",map_3:"90",map_4:"90",map_5:"80",map_6:"10"};
+
 if(not audio_is_playing(snd_music))
-	audio_play_sound(snd_music,2,true);
+	audio_play_sound(snd_music,2,true,1,(life % game_speed*4)/ game_speed*4);
 
 if(transition_to != "" and transition_anim >= 1)
 {
@@ -13,6 +16,7 @@ if(transition_to != "" and transition_anim >= 1)
 	end_game_counter = 0;
 	work = [];
 	working = true;
+	end_sound = false;
 	
 	// handle creation of objects
 	with obj_anvil
@@ -123,7 +127,7 @@ if(transition_to != "" and transition_anim >= 1)
 		_anvil.interval_offset = round(interval/3);
 		_anvil.anvil_mode = "other";
 		_anvil.create_hammer();
-		_anvil = instance_create_layer(224,112,layer,obj_anvil,{image_index:0,interval_offset:game_speed,anvil_mode:"correct"});
+		_anvil = instance_create_layer(268,112,layer,obj_anvil,{image_index:0,interval_offset:game_speed,anvil_mode:"correct"});
 		_anvil.image_index = round(interval/3*2)*5;
 		_anvil.interval_offset = round(interval/3*2);
 		_anvil.anvil_mode = "other";

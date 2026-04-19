@@ -4,7 +4,7 @@
 var _r = abs(sin((obj_control.life+interval_offset % (interval*2))/(interval*2)*2*pi));
 image_index = round(4*_r);
 
-if(anvil_mode != "other" and anvil_mode != "player" and (obj_control.life-obj_control.last_strike_life) div obj_control.interval > 3)
+if(anvil_mode != "other" and anvil_mode != "player" and (obj_control.life-obj_control.last_strike_life) div obj_control.interval > 3 and obj_control.working)
 {
 	obj_control.last_strike_life = obj_control.life;
 	play_sound(snd_speech_usher);
@@ -78,14 +78,16 @@ switch(anvil_mode)
 	break;
 	
 	case "player":
-	if(mouse_check_button_pressed(mb_left) and obj_control.working and obj_control.can_strike and point_distance(x,y,mouse_x,mouse_y) < 48)
+	if(mouse_check_button_pressed(mb_left) and obj_control.working and obj_control.can_strike)
 	{
 		//audio_play_sound(snd_strike,4,false,obj_control.gain_randomize(),0,obj_control.pitch_randomize());
-		play_sound(snd_strike);
+		
 		obj_control.last_strike = obj_control.life % interval;
 		if(obj_control.last_strike > interval/2)
 			obj_control.last_strike = interval - obj_control.last_strike;
 		create_sparks();
+		var _num = 1+(obj_control.last_strike<obj_control.grace) + (obj_control.last_strike<obj_control.grace*2);
+		play_sound(snd_strike,4-_num);
 		array_push(obj_control.work,obj_control.last_strike);
 		obj_control.can_strike = false;
 		obj_control.last_strike_life = obj_control.life;

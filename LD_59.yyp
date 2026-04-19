@@ -4,6 +4,7 @@
   "name": "LD_59",
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
+    {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"music_group","targets":-1,},
   ],
   "configs": {
     "children": [],
@@ -36,6 +37,7 @@
   "resources": [
     {"id":{"name":"snd_speech_now","path":"sounds/snd_speech_now/snd_speech_now.yy",},},
     {"id":{"name":"tls_back","path":"tilesets/tls_back/tls_back.yy",},},
+    {"id":{"name":"snd_audio_end","path":"sounds/snd_audio_end/snd_audio_end.yy",},},
     {"id":{"name":"obj_hammer","path":"objects/obj_hammer/obj_hammer.yy",},},
     {"id":{"name":"fnt_font","path":"fonts/fnt_font/fnt_font.yy",},},
     {"id":{"name":"obj_light","path":"objects/obj_light/obj_light.yy",},},
@@ -50,6 +52,7 @@
     {"id":{"name":"obj_anvil","path":"objects/obj_anvil/obj_anvil.yy",},},
     {"id":{"name":"snd_speech_drunk_now","path":"sounds/snd_speech_drunk_now/snd_speech_drunk_now.yy",},},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
+    {"id":{"name":"spr_icon","path":"sprites/spr_icon/spr_icon.yy",},},
     {"id":{"name":"spr_hammer","path":"sprites/spr_hammer/spr_hammer.yy",},},
     {"id":{"name":"GameOverview","path":"notes/GameOverview/GameOverview.yy",},},
     {"id":{"name":"snd_strike","path":"sounds/snd_strike/snd_strike.yy",},},

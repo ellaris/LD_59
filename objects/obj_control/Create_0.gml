@@ -62,24 +62,78 @@ end_game_counter = 0;
 
 surface_lighting = noone;
 
+end_sound = false;
+
 // resize view
 
-var _sw = display_get_width();
-var _sh = display_get_height();
-var _target_height = 180;
-if(_sw/2 > _sh)
-	_target_height = 90;
-var _resize = min(_sw div 320, _sh div _target_height);
-var _nw = 320*_resize;
-var _nh = _target_height*_resize;
-view_set_wport(view_current,_nw);
-view_set_hport(view_current,_nh);
-window_set_size(_nw,_nh);
+window_set_fullscreen(true);
 
-if(_target_height != 180)
-{
-	view_set_yport(view_current,64);	
+
+
+//if(_target_height != 90)
+//{
+	
+//}
+
+maximize_ratio = function(){
+	var _sw = display_get_width();
+	var _sh = display_get_height();
+	var _target_height = 180;
+	if(_sw/2.5 > _sh)
+		_target_height = 90;
+	var _resize = min(_sw div 320, _sh div _target_height);
+	var _nw = 320*_resize;
+	var _nh = _target_height*_resize;
+	view_set_wport(view_current,_nw);
+	view_set_hport(view_current,_nh);
+	window_set_size(_nw,_nh);
+	screen_maximize = false;
+	if(_target_height != 180)
+	{
+		view_set_yport(view_current,64);
+	}
 }
+
+music_volume = 1;
+sound_volume = 1;
+audio_group_load(music_group);
+
+change_music_volume = function(){
+	music_volume -= 0.25;
+	if(music_volume < 0)
+		music_volume = 1;
+	audio_group_set_gain(music_group,music_volume,0);
+}
+
+change_sound_volume = function(){
+	sound_volume -= 0.25;
+	if(sound_volume < 0)
+		sound_volume = 1;
+	audio_group_set_gain(audiogroup_default,sound_volume,0);
+	audio_play_sound(snd_speech_now,1,false);
+}
+
+
+maximize_screen = function(){
+	view_set_yport(view_current,0);
+	var _sw = display_get_width();
+	var _sh = display_get_height();
+	view_set_wport(view_current,_sw);
+	view_set_hport(view_current,_sh);
+	window_set_size(_sw,_sh);
+	screen_maximize = true;
+}
+
+screen_maximize = false;
+maximize_ratio();
+
+switch_screen_setting = function(){
+	if(screen_maximize)
+		maximize_ratio();
+	else
+		maximize_screen();
+}
+
 
 pitch_randomize = function(){
 	return 1.0-0.05+0.01*irandom(10)
@@ -174,4 +228,10 @@ button = function(_label,_x,_y,_func,_info="",_available=true,_w=48,_h=24){
 	//draw_set_valign(fa_top);
 	//draw_set_halign(fa_left);
 	
+}
+
+draw_icon = function(_x,_y,_index,_func){
+	draw_sprite(spr_icon,_index,_x,_y);
+	if(mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,_x-16,_y-16,_x+16,_y+16))
+		method_call(_func,[]);
 }
